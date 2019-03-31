@@ -1,0 +1,9 @@
+com\worldpay\rest\controller\OfferRestController.class
+com\worldpay\beans\Offer.class
+com\worldpay\handler\DateDeserializer.class
+com\worldpay\rest\controller\OfferStartService.class
+com\worldpay\util\STATUS.class
+com\worldpay\exceptions\OfferException.class
+com\worldpay\JerseyConfig.class
+com\worldpay\handler\DateSerializer.class
+com\worldpay\service\OfferService.class

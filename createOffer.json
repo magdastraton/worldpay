@@ -1,0 +1,15 @@
+{
+  "productName":"apples",
+   "description":"4 apples for 2 £",
+  "regularPrice":"3",
+  	"curency":"£",
+  	"expirationDate":"31/03/2019" 
+}
+
+{
+  "productName":"tomatoes",
+   "description":"4 tomatoes for 2 £",
+  	"regularPrice":"3",
+  	"curency":"£",
+  	"expirationDate":"31-01-2019" 
+}
