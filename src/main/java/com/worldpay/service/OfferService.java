@@ -52,11 +52,10 @@ public class OfferService {
         offersMap.replace(productName,offer);
     }
 
-    //allow certain actions to be performed only if a certain workflow is run,
-    //that's why delete an offer only if it has been previously canceled or expired
     public void deleteOffer(String productName) throws OfferException {
+        //delete an offer only if it has been canceled or expired
         Offer toBeDeleted = offersMap.get(productName);
-        if(!needToRejectOffer(toBeDeleted))
+        if(!canBeDeleted(toBeDeleted))
             throw new OfferException(OfferException.OFFER_CANNOT_BE_DELETED);
         offersMap.remove(productName);
     }
@@ -71,6 +70,10 @@ public class OfferService {
     private boolean needToRejectOffer(Offer offer)
     {
         return (offer==null ||offer.isExpired());
+    }
+
+    private boolean canBeDeleted(Offer offer){
+        return offer==null || offer.getStatus()!=STATUS.ACTIVE;
     }
 
     public ConcurrentMap<String, Offer> getOffersMap() {

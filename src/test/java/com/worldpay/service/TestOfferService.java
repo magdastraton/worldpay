@@ -101,6 +101,7 @@ public class TestOfferService {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date expiredDate = dateFormat.parse("31-05-2019");
         Offer newOffer = addNewOffer("tomatoes","1 kilo for 1 £",expiredDate);
+        newOffer.setStatus(STATUS.ACTIVE);
         offerService.deleteOffer("tomatoes");
         offers = offerService.getOffersMap();
         assertTrue(offers.containsKey("tomatoes"));
